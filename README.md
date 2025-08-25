@@ -1,77 +1,287 @@
-Shape Wiz Project: AI Chat → MCP Tools Flow Analysis
-Based on my review of the codebase, here's the complete flow of how the AI chat calls and uses MCP tools:
-🏗️ Architecture Overview
-This is a Next.js quiz application about Shape Network that uses:
-Frontend: React chat interface
-Backend: AI SDK with OpenAI GPT-4
-MCP Integration: External MCP server for Shape Network data
-Web3: Wallet connection for NFT rewards
-🔄 Complete Flow Breakdown
+# Shape Wiz 🧙‍♂️
 
-1. User Interaction Flow
-   User → Home Page → Connect Wallet → Start Quiz → Chat Interface
-   Key Files:
-   app/page.tsx - Main page with home/chat toggle
-   components/chat-interface.tsx - React chat UI
-2. Chat Message Processing
-   Frontend Chat → API Route → AI SDK → Tool Selection → MCP Call
-   low Details:
-   User sends message via chat-interface.tsx
-   Uses useChat hook from AI SDK (@ai-sdk/react)
-   Sends to /api/chat endpoint
-3. AI Chat API Processing (app/api/chat/route.ts)
-   The core AI processing happens here:
-   // Two main tools are available:
-4. "list-tools" - Lists available MCP tools
-5. "shape-mcp" - Calls specific MCP tools
-   System Prompt:
-   > "You are a quiz and trivia game host. You will use the 'shape-mcp' tool to get information about Shape to make your questions."
-6. MCP Tool Integration (lib/mcp.ts)
-   MCP Client Functions:
-   // Lists available tools from MCP server
-   listMcpTools() → calls 'tools/list'
+**An AI-powered quiz that gamifies the Shape Network and rewards players with NFTs. Built with Next.js, GPT-4, and blockchain integration.**
 
-// Executes specific MCP tool with arguments  
-callMcpTool(name, args) → calls 'tools/call'
-MCP Server:
-URL: https://shape-mcp-server-eta.vercel.app/mcp (default)
-Uses JSON-RPC 2.0 protocol
-Communicates via HTTP POST requests 5. Tool Execution Flow
-<see diagram> 6. Error Handling & Tool Discovery
-The system has robust error handling:
-sequenceDiagram
-participant User
-participant Chat
-participant API
-participant AI
-participant MCP
+---
 
-    User->>Chat: "What's the latest block?"
-    Chat->>API: POST /api/chat
-    API->>AI: GPT-4 processes message
-    AI->>API: Decides to use "shape-mcp" tool
-    API->>MCP: callMcpTool("get-latest-block")
-    MCP-->>API: Returns block data
-    API->>AI: Tool result processed
-    AI-->>Chat: Formatted response
-    Chat-->>User: Display answer
+## 🎯 Concept
 
-7. Frontend Tool Visualization
-   The chat interface shows tool calls in real-time:
-   // If tool not found, automatically lists available tools
-   if (error.message.includes('Tool') && error.message.includes('not found')) {
-   const list = await listMcpTools();
-   return `Unknown tool "${name}". Available tools: ${JSON.stringify(list.tools)}`;
-   }
-   🛠️ Available MCP Tools
-   Based on the code, the MCP server likely provides Shape Network-specific tools like:
-   Block information queries
-   Transaction data
-   Network statistics
-   User NFT data (as seen in get-nft-for-user reference)
-   🎯 Key Features
-   Smart Tool Selection: AI automatically chooses appropriate MCP tools
-   Real-time Feedback: Users see tool calls and results
-   Error Recovery: Graceful handling of missing tools
-   Quiz Context: AI uses Shape data to generate quiz questions
-   Web3 Integration: Wallet connection for NFT rewards
+Shape Wiz transforms the Shape Network ecosystem into an interactive learning game. Players answer AI-generated quiz questions derived from **real-time onchain data** via Shape MCP, earning **NFT rewards** for perfect scores. This gamified approach educates users while showcasing the power of AI + blockchain synergy.
+
+---
+
+## 🎨 Innovation & Creativity
+
+- Real-time AI quiz generation from **Shape MCP tools**, including Gasback analytics, NFT collections, and top creators.
+- Adaptive questions mixing **doc-based knowledge** with **live blockchain state**.
+- Every NFT reward reflects **onchain achievements**, turning knowledge into collectible assets.
+
+---
+
+## 🤖 AI Effectiveness
+
+- GPT-4 generates dynamic multiple-choice questions from Shape MCP data.
+- Validates answers against **live onchain state**.
+- Fallback handling ensures smooth gameplay even if some MCP tools are temporarily unavailable.
+- Streaming interface shows AI tool calls and results in real-time for transparency.
+
+---
+
+## 🏗️ Technical Integration
+
+- **Frontend:** Next.js + React + Tailwind + shadcn/ui components
+- **Wallet Integration:** RainbowKit + Wagmi for Shape Network connections
+- **AI:** GPT-4 (OpenAI API)
+- **Shape MCP Tools:**
+  - `getTopShapeCreators`
+  - `getCollectionAnalytics`
+  - `simulateGasbackRewards`
+- **NFT Rewards:** Alchemy NFT API mints collectible NFTs upon perfect quiz scores
+
+---
+
+## 🌟 Ecosystem Impact
+
+Shape Wiz encourages engagement and learning within the Shape Network:
+
+- Players explore **onchain primitives** like NFTs, Gasback, and Stack achievements.
+- Educational gameplay rewards knowledge with **tangible digital collectibles**.
+- Promotes adoption of Shape Network features through a fun, interactive experience.
+
+---
+
+## 🎮 User Experience
+
+- Connect your Shape wallet (MetaMask or compatible).
+- Click **Start Quiz** → answer 5 AI-generated questions.
+- Real-time feedback with streaming AI tool calls.
+- Perfect score → claim your **Shape Wiz NFT** instantly.
+- Clean, intuitive interface using Tailwind + shadcn/ui.
+
+---
+
+## 🚀 Demo
+
+**Watch Shape Wiz in action:** [Demo Video / GIF Link]
+
+Flow: Start Quiz → Answer Questions → Mint NFT → View on Shape testnet.
+
+---
+
+## 🛠️ Setup
+
+### Prerequisites
+
+- Node.js 18+
+- Yarn or npm
+- Shape Network wallet (MetaMask, etc.)
+
+### Environment Variables
+
+Create a `.env.local` file:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key
+NEXT_PUBLIC_ALCHEMY_KEY=your_alchemy_key
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=your_walletconnect_project_id
+NEXT_PUBLIC_CHAIN_ID=360
+MCP_SERVER_URL=https://shape-mcp-server-eta.vercel.app/mcp
+```
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd shape-builder-kit-1
+
+# Install dependencies
+yarn install
+# or
+npm install
+
+# Run development server
+yarn dev
+# or
+npm run dev
+```
+
+### Building for Production
+
+```bash
+yarn build
+yarn start
+# or
+npm run build
+npm start
+
+```
+
+### 🤖 AI + MCP Integration
+
+- GPT-4 uses live Shape MCP data to generate adaptive quiz questions.
+- Example: "Who are the top 3 Gasback earners today?"
+- AI validates answers against onchain state, providing instant feedback.
+- Fallbacks ensure the quiz continues even if certain tools or APIs are temporarily unavailable.
+
+### Model Context Protocol (MCP) Integration
+
+The application leverages MCP to connect GPT-4 with real-time Shape Network data:
+
+```typescript
+// lib/mcp.ts - Core MCP client
+export async function listMcpTools() {
+  return rpc<{ tools: Array<{ name: string; description?: string }> }>('tools/list');
+}
+
+export async function callMcpTool(name: string, args: Record<string, unknown> = {}) {
+  return rpc<unknown>('tools/call', { name, arguments: args });
+}
+```
+
+### AI Tools Configuration
+
+```typescript
+// app/api/chat/route.ts - AI tools setup
+const mcpTools = tool({
+  name: 'shape-mcp',
+  description: 'Call an MCP tool by exact name with JSON arguments',
+  inputSchema: z.object({
+    name: z.string(),
+    args: z.record(z.string(), z.unknown()).default({}),
+  }),
+  execute: async ({ name, args }) => {
+    const result = await callMcpTool(name, args);
+    return typeof result === 'string' ? result : JSON.stringify(result);
+  },
+});
+```
+
+### System Prompt Design
+
+The AI is configured with a specialized system prompt that defines:
+
+- **Role**: Quiz and trivia game host for Shape Network
+- **Data Sources**: MCP tools for blockchain data, Alchemy API as fallback
+- **Game Rules**: 5 questions, 15-second timeouts, scoring system
+- **Error Handling**: Graceful degradation and user support
+- **NFT Rewards**: Automated minting process for winners
+
+### Real-time Tool Visualization
+
+The chat interface displays AI tool calls in real-time:
+
+```typescript
+// components/chat-interface.tsx - Tool call rendering
+case 'tool-call':
+  return (
+    <div className="text-xs whitespace-pre-wrap opacity-80">
+      Tool call: {part.type} {JSON.stringify(part.input)}
+    </div>
+  );
+case 'tool-result':
+  return (
+    <pre className="text-xs opacity-70">
+      {typeof part.output === 'string'
+        ? part.output
+        : JSON.stringify(part.output, null, 2)}
+    </pre>
+  );
+```
+
+## 🔄 Data Flow
+
+1. **User Interaction**: Player connects wallet and starts quiz
+2. **AI Processing**: GPT-4 generates questions using MCP tools for current Shape Network data
+3. **Real-time Feedback**: Tool calls and blockchain queries shown in chat
+4. **Answer Evaluation**: AI validates answers against blockchain sources
+5. **NFT Reward**: Automatic minting for perfect scores (5/5 correct)
+
+## 🛠️ Available MCP Tools
+
+The Shape Network MCP server provides tools for:
+
+- Block information and network statistics
+- Transaction data and history
+- Token information and balances
+- NFT data and ownership
+- Network activity metrics
+
+## 📁 Project Structure
+
+```
+shape-builder-kit/
+├── app/
+│   ├── api/
+│   │   ├── chat/       # AI chat endpoint
+│   │   ├── mint-nft/   # NFT minting
+│   │   └── get-nfts/   # NFT querying
+│   └── page.tsx        # Main app
+├── components/
+│   ├── chat-interface.tsx  # Quiz chat UI
+│   ├── wallet-connect.tsx  # Wallet connection
+│   └── ui/                 # shadcn/ui components
+├── lib/
+│   ├── mcp.ts           # MCP client
+│   ├── clients.ts       # Alchemy/RPC clients
+│   └── config.ts        # Environment config
+└── hooks/
+    └── web3.ts          # Web3 React hooks
+
+```
+
+## 🎮 How to Play
+
+1. **Connect Wallet**: Use any Web3 wallet on Shape Network
+2. **Start Quiz**: Click "Start Quiz" to begin
+3. **Answer Questions**: Type "START" and answer 5 AI-generated questions
+4. **Earn NFT**: Get all 5 correct to receive a free Shape Wiz NFT
+5. **View Results**: See real-time tool calls and blockchain verification
+
+## ⚠️ Known Issues & Future Plans
+
+### 🚨 Known Issues
+
+- **NFT Minting**: Currently returns mock responses only. The `mint-nft` API endpoint contains `TODO` comments and placeholder contract addresses (`0x...`)
+- **Smart Contract**: The `ShapeWiz.sol` file exists but is completely empty (0 bytes)
+- **Timer Functionality**: No 15-second question timer implementation in the chat interface
+- **NFT Validation**: No checking if users already own the quiz NFT before allowing multiple attempts
+
+### 🔄 In Progress
+
+- **Smart Contract Development**: Creating the actual ShapeWiz NFT contract for Shape Network
+- **Real NFT Minting**: Integrating with deployed contract for actual on-chain NFT rewards
+- **MCP Server Stability**: Improving error handling when Shape MCP server is unavailable
+- **Question Pool**: Expanding the variety of AI-generated questions
+
+### 🎯 Future Plans
+
+- **Timer Implementation**: Add visual countdown timer for each question (15 seconds)
+- **Leaderboard**: Track high scores and fastest completion times
+- **Multiple Difficulty Levels**: Easy, Medium, Hard question categories
+- **Social Features**: Share quiz results and NFT achievements
+- **Mobile Optimization**: Enhanced mobile-first design and wallet connection
+- **Analytics Dashboard**: Track user engagement and quiz performance metrics
+- **Custom Question Themes**: Allow users to choose specific Shape Network topics
+
+### 🛠️ Technical Debt
+
+- **Error Boundaries**: Add React error boundaries for better error handling
+- **Loading States**: Improve loading indicators during MCP tool calls
+- **TypeScript Coverage**: Add missing type definitions for MCP responses
+- **Testing Suite**: Add unit and integration tests for AI chat functionality
+- **Performance**: Optimize large MCP response handling and streaming
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/TalonDragon000/shape-builder-kit)
+- [Shape Network](https://shape.network)
+- [Shapecraft Hackathon](https://shape.network/shapecraft)
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## 🤝 Support
+
+For issues and support, please visit: [GitHub Issues](https://github.com/TalonDragon000/shape-builder-kit/issues)
