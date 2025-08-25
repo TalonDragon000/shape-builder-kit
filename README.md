@@ -62,7 +62,9 @@ Shape Wiz encourages engagement and learning within the Shape Network:
 
 ## 🚀 Demo
 
-**Watch Shape Wiz in action:** [Demo Video / GIF Link]
+**Watch Shape Wiz in action:** 
+
+https://www.youtube.com/watch?v=7HaTo7-WAZ4
 
 Flow: Start Quiz → Answer Questions → Mint NFT → View on Shape testnet.
 
