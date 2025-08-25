@@ -2,6 +2,8 @@
 
 **An AI-powered quiz that gamifies the Shape Network and rewards players with NFTs. Built with Next.js, GPT-4, and blockchain integration.**
 
+<img width="300" height="300" alt="shape wiz" src="https://github.com/user-attachments/assets/81c3f9fc-776c-416a-af15-d284b335debb" />
+
 ---
 
 ## 🎯 Concept
@@ -277,6 +279,7 @@ shape-builder-kit/
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/TalonDragon000/shape-builder-kit)
+- NFT Minter Contract: [0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6](https://sepolia.shapescan.xyz/address/0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6)
 - [Shape Network](https://shape.network)
 - [Shapecraft Hackathon](https://shape.network/shapecraft)
 
