@@ -254,7 +254,7 @@ shape-builder-kit/
 ### 🔄 In Progress
 
 - **Smart Contract Development**: Will reroute to mainnet after minting is fixed.
-- **Real NFT Minting**: Integrating with deployed contract for actual on-chain NFT rewards
+- **Real NFT Minting**: Integrating with a deployed mainnet contract for actual on-chain NFT rewards
 - **MCP Server Stability**: Improving error handling when Shape MCP server is unavailable
 - **Question Pool**: Cross-checking questions and answers for correctness.
 
