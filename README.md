@@ -23,7 +23,7 @@ Shape Wiz transforms the Shape Network ecosystem into an interactive learning ga
 
 ## 🤖 AI Effectiveness
 
-- GPT-4 generates dynamic multiple-choice questions from Shape MCP data.
+- GPT-4 generates dynamic open-ended or multiple choice questions from Shape MCP data.
 - Validates answers against **live onchain state**.
 - Fallback handling ensures smooth gameplay even if some MCP tools are temporarily unavailable.
 - Streaming interface shows AI tool calls and results in real-time for transparency.
@@ -39,7 +39,10 @@ Shape Wiz transforms the Shape Network ecosystem into an interactive learning ga
   - `getTopShapeCreators`
   - `getCollectionAnalytics`
   - `simulateGasbackRewards`
-- **NFT Rewards:** Alchemy NFT API mints collectible NFTs upon perfect quiz scores
+- **NFT Rewards:** 
+  - Alchemy NFT API mints collectible NFTs upon perfect quiz scores
+  - FREE mint, gas-sponsored, and ai bot executed for seamless reward execution 
+  - Soul-bound and limited to one per wallet address as a single achievement NFT
 
 ---
 
@@ -48,8 +51,9 @@ Shape Wiz transforms the Shape Network ecosystem into an interactive learning ga
 Shape Wiz encourages engagement and learning within the Shape Network:
 
 - Players explore **onchain primitives** like NFTs, Gasback, and Stack achievements.
-- Educational gameplay rewards knowledge with **tangible digital collectibles**.
-- Promotes adoption of Shape Network features through a fun, interactive experience.
+- Educational gameplay rewards knowledge with **tangible digital collectibles** with a FREE soul-bound achievement NFT to Collect. 
+- Promotes adoption of Shape Network features through a fun, interactive trivia game.
+- Real-time generated quiz questions for dynamic and evolving content at minimal effort.
 
 ---
 
@@ -58,7 +62,7 @@ Shape Wiz encourages engagement and learning within the Shape Network:
 - Connect your Shape wallet (MetaMask or compatible).
 - Click **Start Quiz** → answer 5 AI-generated questions.
 - Real-time feedback with streaming AI tool calls.
-- Perfect score → claim your **Shape Wiz NFT** instantly.
+- Perfect score → claim your **Shape Wiz NFT** instantly executed by the ai for free.
 - Clean, intuitive interface using Tailwind + shadcn/ui.
 
 ---
@@ -254,7 +258,7 @@ shape-builder-kit/
 
 ### 🔄 In Progress
 
-- **Smart Contract Development**: Will reroute to mainnet after minting is fixed.
+- **Smart Contract Development**: Will redeploy to mainnet after minting is fixed.
 - **Real NFT Minting**: Integrating with a deployed mainnet contract for actual on-chain NFT rewards
 - **MCP Server Stability**: Improving error handling when Shape MCP server is unavailable
 - **Question Pool**: Cross-checking questions and answers for correctness.
@@ -269,6 +273,7 @@ shape-builder-kit/
 - **Mobile Optimization**: Enhanced mobile-first design and wallet connection
 - **Analytics Dashboard**: Track user engagement and quiz performance metrics
 - **Custom Question Themes**: Allow users to choose specific Shape Network topics
+- **Bot and Mini-App Integration**: Integrate a multi-platform experience with options to play via Discord, Telegram, BaseApp, or Farcaster.
 
 ### 🛠️ Technical Debt
 
