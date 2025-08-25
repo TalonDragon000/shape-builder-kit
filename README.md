@@ -277,6 +277,7 @@ shape-builder-kit/
 - **Custom Question Themes**: Allow users to choose specific Shape Network topics
 - **Bot and Mini-App Integration**: Integrate a multi-platform experience with options to play via Discord, Telegram, BaseApp, or Farcaster.
 - **Dynamic Prizes**: Ai generated dynamic prize NFTs based and distributed depending on newly acquired content. 
+- **Visual Enhancements**: Update template UI, naming conventions, confetti triggers, and message format, displays, and modules
 
 ### 🛠️ Technical Debt
 
