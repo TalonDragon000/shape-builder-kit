@@ -246,23 +246,24 @@ shape-builder-kit/
 
 ### 🚨 Known Issues
 
-- **NFT Minting**: Currently returns mock responses only. The `mint-nft` API endpoint contains `TODO` comments and placeholder contract addresses (`0x...`)
-- **Smart Contract**: The `ShapeWiz.sol` file exists but is completely empty (0 bytes)
+- **NFT Minting**: Unable to get ai to execute minter
 - **Timer Functionality**: No 15-second question timer implementation in the chat interface
 - **NFT Validation**: No checking if users already own the quiz NFT before allowing multiple attempts
+- **Blockchain POSTS:** Retrieves data, but is unable to post data retrieved
 
 ### 🔄 In Progress
 
-- **Smart Contract Development**: Creating the actual ShapeWiz NFT contract for Shape Network
+- **Smart Contract Development**: Will reroute to mainnet after minting is fixed.
 - **Real NFT Minting**: Integrating with deployed contract for actual on-chain NFT rewards
 - **MCP Server Stability**: Improving error handling when Shape MCP server is unavailable
-- **Question Pool**: Expanding the variety of AI-generated questions
+- **Question Pool**: Cross-checking questions and answers for correctness.
 
 ### 🎯 Future Plans
 
 - **Timer Implementation**: Add visual countdown timer for each question (15 seconds)
 - **Leaderboard**: Track high scores and fastest completion times
 - **Multiple Difficulty Levels**: Easy, Medium, Hard question categories
+- **More NFTs to Collect:** More NFTS for achievements unlocked from milestone hits
 - **Social Features**: Share quiz results and NFT achievements
 - **Mobile Optimization**: Enhanced mobile-first design and wallet connection
 - **Analytics Dashboard**: Track user engagement and quiz performance metrics
@@ -279,6 +280,7 @@ shape-builder-kit/
 ## 🔗 Links
 
 - [GitHub Repository](https://github.com/TalonDragon000/shape-builder-kit)
+- [MCP Server](https://github.com/TalonDragon000/shape-mcp-server)
 - NFT Minter Contract: [0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6](https://sepolia.shapescan.xyz/address/0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6)
 - [Shape Network](https://shape.network)
 - [Shapecraft Hackathon](https://shape.network/shapecraft)
