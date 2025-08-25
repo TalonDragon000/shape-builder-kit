@@ -3,6 +3,7 @@
 **An AI-powered quiz that gamifies the Shape Network and rewards players with NFTs. Built with Next.js, GPT-4, and blockchain integration.**
 
 <img width="300" height="300" alt="shape wiz" src="https://github.com/user-attachments/assets/81c3f9fc-776c-416a-af15-d284b335debb" />
+(This NFT was also AI generated on Night Cafe and edited in canva!)
 
 ---
 
