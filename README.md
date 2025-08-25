@@ -54,6 +54,8 @@ Shape Wiz encourages engagement and learning within the Shape Network:
 - Educational gameplay rewards knowledge with **tangible digital collectibles** with a FREE soul-bound achievement NFT to Collect. 
 - Promotes adoption of Shape Network features through a fun, interactive trivia game.
 - Real-time generated quiz questions for dynamic and evolving content at minimal effort.
+- Prevent cheats with open-ended questions that are instantly reviewed.
+- Enriched learning by testing applied knowledge, critical thinking, and comprehension.
 
 ---
 
