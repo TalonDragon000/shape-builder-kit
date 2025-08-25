@@ -282,7 +282,7 @@ shape-builder-kit/
 
 - [GitHub Repository](https://github.com/TalonDragon000/shape-builder-kit)
 - [MCP Server](https://github.com/TalonDragon000/shape-mcp-server)
-- NFT Minter Contract: [0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6](https://sepolia.shapescan.xyz/address/0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6)
+- NFT Minter Contract by DaveProxy80: [0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6](https://sepolia.shapescan.xyz/address/0x81f1C034CBDD7E23694cA1a895bFC8Fb080D65e6)
 - [Shape Network](https://shape.network)
 - [Shapecraft Hackathon](https://shape.network/shapecraft)
 
