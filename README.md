@@ -274,6 +274,7 @@ shape-builder-kit/
 - **Analytics Dashboard**: Track user engagement and quiz performance metrics
 - **Custom Question Themes**: Allow users to choose specific Shape Network topics
 - **Bot and Mini-App Integration**: Integrate a multi-platform experience with options to play via Discord, Telegram, BaseApp, or Farcaster.
+- **Dynamic Prizes**: Ai generated dynamic prize NFTs based and distributed depending on newly acquired content. 
 
 ### 🛠️ Technical Debt
 
